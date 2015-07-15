@@ -1,7 +1,7 @@
 <?php namespace Quallsbenson\Analytics\Repository;
 
 
-use Criteria\CriteriaBuilder;
+use Criteria\CriteriaBuilder as Criteria;
 use Quallsbenson\Analytics\Interfaces\DatabaseProviderInterface;
 use Quallsbenson\Analytics\Interfaces\VisitorFactoryInterface;
 
@@ -16,15 +16,15 @@ class VisitorRepository{
 	{
 
 		$this->setCallbackMap([
-			"criteria" : "getCriteriaBuilder",
-			"database" : "getDatabaseProvider",
-			"visitor"  : "getVisitorFactory"
+			"criteria" => "getCriteriaBuilder",
+			"database" => "getDatabaseProvider",
+			"visitor"  => "getVisitorFactory"
 		]);
 
 	}
 
 
-	public function setCriteriaBuilder( Criteria\CriteriaBuilder $criteria )
+	public function setCriteriaBuilder( Criteria $criteria )
 	{
 
 		$this->criteria = $criteria;
@@ -81,10 +81,10 @@ class VisitorRepository{
 		$results  = $this->database()->findBy( $criteria );
 
 
-		if( count( $results ) )
+		if( $results )
 		{
 
-			return $this->visitor()->make( $results );
+			return $this->visitor()->make( $results, $criteria );
 
 		}
 

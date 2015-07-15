@@ -47,7 +47,7 @@ class GoogleAnalyticsCriteria extends CriteriaBuilder{
 	**/
 
 
-	public function by()
+	public function with()
 	{
 
 		$dimensions = func_get_args();
@@ -88,7 +88,7 @@ class GoogleAnalyticsCriteria extends CriteriaBuilder{
 	**/
 
 
-	public function with()
+	public function by()
 	{
 
 		$metrics = func_get_args();

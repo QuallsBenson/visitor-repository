@@ -2,6 +2,7 @@
 
 
 use Criteria\CriteriaBuilder as Criteria;
+use Quallsbenson\Analytics\Interfaces\DatabaseProviderInterface;
 
 
 class GoogleAnalyticsSearchProvider implements DatabaseProviderInterface{
