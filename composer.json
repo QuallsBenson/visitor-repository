@@ -16,6 +16,6 @@
         "psr-0" : {
             "Quallsbenson\\Analytics\\" : ""
         }
-    }
+    },
     "target-dir" : "Quallsbenson/Analytics"
 }
