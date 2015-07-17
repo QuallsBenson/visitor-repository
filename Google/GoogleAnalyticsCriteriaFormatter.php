@@ -63,6 +63,20 @@ class GoogleAnalyticsCriteriaFormatter implements FormatterInterface{
 					$result['max-results']  = $i->getValue();
 
 				break;
+				case 'filters':
+
+					$filters = [];
+
+					foreach( $i as $f )
+					{
+
+						$filters[] = $f->getName().$f->getValue();
+
+					}
+
+					$result["filters"] = implode(",", $filters);
+
+				break;
 
 			}
 

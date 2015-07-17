@@ -2,6 +2,7 @@
 
 
 use Criteria\CriteriaBuilder as Criteria;
+use Quallsbenson\Analytics\Interfaces\DatabaseProviderInterface;
 
 
 class GoogleAnalyticsSearchProvider implements DatabaseProviderInterface{
@@ -31,7 +32,8 @@ class GoogleAnalyticsSearchProvider implements DatabaseProviderInterface{
 		$options    = array(
 		    'dimensions'  => @$parameters['dimensions'],
 		    'sort' 		  => @$parameters['sort'],
-		    'max-results' => @$parameters['max-results']
+		    'max-results' => @$parameters['max-results'],
+		    'filters'     => @$parameters['filters']
 		);
 
 		$results =  $this->service->data_ga->get(
